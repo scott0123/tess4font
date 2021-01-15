@@ -26,6 +26,7 @@ mkdir tessdata
 cd tessdata
 wget https://github.com/tesseract-ocr/tessdata_best/raw/master/eng.traineddata
 mkdir configs
+cd configs
 wget https://raw.githubusercontent.com/tesseract-ocr/tesseract/master/tessdata/configs/lstm.train
 cd ../..
 
