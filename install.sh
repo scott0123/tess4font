@@ -29,4 +29,4 @@ cd ..
 
 echo CREATING TRAINING DATA...
 mkdir training_data
-tesstrain.sh --fonts_dir font --lang eng --linedata_only --noextract_font_properties --langdata_dir langdata --tessdata_dir tessdata --output_dir training_data
+sh tesstrain.sh --fonts_dir font --lang eng --linedata_only --noextract_font_properties --langdata_dir langdata --tessdata_dir tessdata --output_dir training_data
