@@ -25,6 +25,7 @@ cd ../..
 mkdir tessdata
 cd tessdata
 wget https://github.com/tesseract-ocr/tessdata_best/raw/master/eng.traineddata
+cd ..
 
 echo CREATING TRAINING DATA...
 mkdir training_data
