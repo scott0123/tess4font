@@ -15,8 +15,10 @@ Place your font(s) in the `font` directory (may need to scp first if working on 
 
 2. `sh install.sh`
 
-3. (Optional) Update `langdata/eng/eng.training_text` to suit your use-case
+3. (Optional) Update `langdata/eng/eng.training_text` to suit your use-case. Append to this file with newline separated sentences.
 
-4. `sh train.sh`
+4. `sh generate.sh`
 
-5. After 20 mins your trained data file will be ready in the `output` directory (`custom.trainedata`)
+5. `sh train.sh`
+
+6. After 20 mins your trained data file will be ready in the `output` directory (`custom.trainedata`)

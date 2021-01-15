@@ -7,14 +7,14 @@ wget https://raw.githubusercontent.com/tesseract-ocr/tesseract/master/src/traini
 wget https://raw.githubusercontent.com/tesseract-ocr/tesseract/master/src/training/tesstrain_utils.sh
 wget https://raw.githubusercontent.com/tesseract-ocr/tesseract/master/src/training/language-specific.sh
 
-mkdir langdata
+mkdir -p langdata
 cd langdata
 wget https://raw.githubusercontent.com/tesseract-ocr/langdata_lstm/master/radical-stroke.txt
 wget https://raw.githubusercontent.com/tesseract-ocr/langdata_lstm/master/common.punc
 wget https://raw.githubusercontent.com/tesseract-ocr/langdata_lstm/master/font_properties
 wget https://raw.githubusercontent.com/tesseract-ocr/langdata_lstm/master/Latin.unicharset
 wget https://raw.githubusercontent.com/tesseract-ocr/langdata_lstm/master/Latin.xheights
-mkdir eng
+mkdir -p eng
 cd eng
 wget https://raw.githubusercontent.com/tesseract-ocr/langdata/master/eng/eng.training_text
 wget https://raw.githubusercontent.com/tesseract-ocr/langdata/master/eng/eng.punc
@@ -22,18 +22,10 @@ wget https://raw.githubusercontent.com/tesseract-ocr/langdata/master/eng/eng.num
 wget https://raw.githubusercontent.com/tesseract-ocr/langdata/master/eng/eng.wordlist
 cd ../..
 
-mkdir tessdata
+mkdir -p tessdata
 cd tessdata
 wget https://github.com/tesseract-ocr/tessdata_best/raw/master/eng.traineddata
-mkdir configs
+mkdir -p configs
 cd configs
 wget https://raw.githubusercontent.com/tesseract-ocr/tesseract/master/tessdata/configs/lstm.train
 cd ../..
-
-echo CREATING TRAINING DATA...
-mkdir training_data
-fonts="$(text2image --list_available_fonts --fonts_dir font | sed 's/.*: //' | sed 's/.*/"&"/')"
-fonts="$(echo $fonts)"
-echo $fonts
-cmd="bash tesstrain.sh --fonts_dir font --fontlist "$fonts" --lang eng --linedata_only --noextract_font_properties --langdata_dir langdata --tessdata_dir tessdata --output_dir training_data"
-eval $cmd
