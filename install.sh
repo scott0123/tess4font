@@ -5,6 +5,7 @@ sudo apt-get -y install tesseract-ocr libtesseract-dev
 
 wget https://raw.githubusercontent.com/tesseract-ocr/tesseract/master/src/training/tesstrain.sh
 wget https://raw.githubusercontent.com/tesseract-ocr/tesseract/master/src/training/tesstrain_utils.sh
+sed -i '    269icommon_args+=" --degrade_image=false --rotate_image=false --resolution=384"' tesstrain_utils.sh
 wget https://raw.githubusercontent.com/tesseract-ocr/tesseract/master/src/training/language-specific.sh
 
 mkdir -p langdata
