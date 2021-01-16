@@ -7,7 +7,7 @@ lstmtraining --model_output output/custom \
   --continue_from tessdata/eng.lstm \
   --traineddata tessdata/eng.traineddata \
   --train_listfile training_data/eng.training_files.txt \
-  --max_iterations 1000
+  --max_iterations 10000
 lstmtraining --stop_training \
   --continue_from output/custom_checkpoint \
   --traineddata tessdata/eng.traineddata \
